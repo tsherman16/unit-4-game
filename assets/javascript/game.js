@@ -28,7 +28,7 @@ $(document).ready(function () {
     ];
 
     startGame();
-    
+
     bballImages.forEach(function (src) {
         let bballbtn = $("<button>");
         bballbtn.addClass("bball-button");
@@ -39,12 +39,13 @@ $(document).ready(function () {
         bballbtn.append(img);
         $("#buttons").append(bballbtn);
     });
-
+    
     function startGame() {
         console.log("I DID IT #1");
         compScore = Math.floor(Math.random() * (maxNumberComp - minNumberComp + 1) + minNumberComp);
         $("#target-score").text(compScore);
         $("#current-score").text(userScore);
+        
     }
 
     $(".bball-button").on("click", function () {
@@ -54,14 +55,12 @@ $(document).ready(function () {
             winScore++;
             userScore = 0;
             $("#wins").text(winScore);
-            startGame_compScore();
-            startGame_bballScore();
+            startGame();
         } else if (userScore > compScore) {
             lossScore++;
             userScore = 0;
             $("#losses").text(lossScore);
-            startGame_compScore();
-            startGame_bballScore();
+            startGame();
         }
     })
 
