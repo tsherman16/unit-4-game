@@ -14,47 +14,52 @@ $(document).ready(function () {
 
     var winScore = 0;
     var lossScore = 0;
+    var userScore = 0;
+    var compScore = 0;
+    var minNumberImg = 1;
+    var maxNumberImg = 12;
+    var minNumberComp = 19;
+    var maxNumberComp = 120;
     const bballImages = [
-        {img: "https://www.nydailynews.com/resizer/BLjzLj94aayGu3JNDpnGgXA4JMw=/800x560/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/WI6JGVUE6QLP25SWCK7ZIUECIQ.jpg"},
-        {img: "http://www.realclearsports.com/blognetwork/rcs_sidelines/Raja%20Bell%20Suns.jpg"},
-        {img: "https://cdn.vox-cdn.com/thumbor/FqNfGhfaP3771V_2lK2KCKUx8_U=/0x0:599x399/1200x800/filters:focal(0x0:599x399)/cdn.vox-cdn.com/uploads/chorus_image/image/5389779/amarescream.0.jpg"},
-        {img: "http://cdn1-www.hoopsvibe.com/assets/uploads/2008/03/file_50727_0_arton47540.jpg"}
+        "assets/images/bballpic1.jpg",
+        "assets/images/bballpic2.jpg",
+        "assets/images/bballpic3.jpg",
+        "assets/images/bballpic4.jpg"
     ];
 
-    var startGame_compScore = function () {
-        var minNumber = 19;
-        var maxNumber = 120;
-        var compScore = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
-        $("#target-score").innerText(compScore);
-    };
-    var startGame_bballScore = function () {
-        var minNumber = 1;
-        var maxNumber = 12;
-        var bballScore = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+    startGame();
+    
+    bballImages.forEach(function (src) {
+        let bballbtn = $("<button>");
+        bballbtn.addClass("bball-button");
+        bballbtn.attr("score", Math.floor(Math.random() * (maxNumberImg - minNumberImg + 1) + minNumberImg));
+        let img = $("<img>");
+        img.attr("src", src);
+        img.addClass("bball-buttonImg");
+        bballbtn.append(img);
+        $("#buttons").append(bballbtn);
+    });
 
-        bballImages.forEach(function (img) {
-            let bballbtn = $("<button>");
-            bballbtn.addClass("bball-button");
-            bballbtn.val(bballScore);
-            //question about "img" in this function
-            $("#buttons").append(bballbtn);
-        });
+    function startGame() {
+        console.log("I DID IT #1");
+        compScore = Math.floor(Math.random() * (maxNumberComp - minNumberComp + 1) + minNumberComp);
+        $("#target-score").text(compScore);
+        $("#current-score").text(userScore);
+    }
 
-        var userScore = 0;
-        $("#current-score").innertext(userScore);
-    };
-
-
-    $("bball-button").on("click", function () {
-        userScore = userScore + bballScore;
+    $(".bball-button").on("click", function () {
+        userScore = userScore + parseInt($(this).attr("score"));
+        $("#current-score").text(userScore);
         if (userScore === compScore) {
             winScore++;
-            $("#wins").innertext(winScore);
+            userScore = 0;
+            $("#wins").text(winScore);
             startGame_compScore();
             startGame_bballScore();
         } else if (userScore > compScore) {
             lossScore++;
-            $("#losses").innertext(lossScore);
+            userScore = 0;
+            $("#losses").text(lossScore);
             startGame_compScore();
             startGame_bballScore();
         }
