@@ -44,6 +44,7 @@ $(document).ready(function () {
         $("#current-score").innertext(userScore);
     };
 
+
     $("bball-button").on("click", function () {
         userScore = userScore + bballScore;
         if (userScore === compScore) {
