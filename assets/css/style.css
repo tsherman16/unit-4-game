@@ -1,4 +1,38 @@
 .bball-buttonImg {
-    height: 200px;
-    weight: 200px;
+    height: 170px;
+    width: 200px;
+}
+
+.titleHeading {
+    text-align: center;
+    font-family: 'Permanent Marker', 'Shadows Into Light', "Times New Roman";
+}
+
+.background1 {
+    background-color:black;
+    color: white;
+    padding: 20px;
+}
+
+.background2 {
+    background-color:black;
+    color: white;
+    padding: 20px;
+}
+
+h3 {
+    font-family: 'Shadows Into Light', 'Amatic SC', "Times New Roman";
+    font-weight: bold;
+}
+
+.jumbotron {
+    background-image: url(https://www.dazzlejunction.com/backgrounds/NBA/phoenix-suns.gif); 
+    background-repeat:repeat; 
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.footer {
+    text-align: center;
+    font-family: 'Shadows Into Light', 'Amatic SC', "Times New Roman";
 }

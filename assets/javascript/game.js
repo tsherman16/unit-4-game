@@ -24,7 +24,8 @@ $(document).ready(function () {
         "assets/images/bballpic1.jpg",
         "assets/images/bballpic2.jpg",
         "assets/images/bballpic3.jpg",
-        "assets/images/bballpic4.jpg"
+        "assets/images/bballpic4.jpg",
+        "assets/images/bballpic5.jpg"
     ];
 
     startGame();
@@ -39,13 +40,12 @@ $(document).ready(function () {
         bballbtn.append(img);
         $("#buttons").append(bballbtn);
     });
-    
+
     function startGame() {
         console.log("I DID IT #1");
         compScore = Math.floor(Math.random() * (maxNumberComp - minNumberComp + 1) + minNumberComp);
         $("#target-score").text(compScore);
         $("#current-score").text(userScore);
-        
     }
 
     $(".bball-button").on("click", function () {
