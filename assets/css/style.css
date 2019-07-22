@@ -12,13 +12,20 @@
     background-color:#1D1160;
     color: #E56020;
     padding: 20px;
+    margin-top: 30px;
 }
 
 .background2 {
     background-color:#1D1160;
     color: #E56020;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.lead {
+    font-family: 'Shadows Into Light', 'Amatic SC', "Times New Roman";
+    font-size: 160%;
 }
 
 h3 {
@@ -26,14 +33,9 @@ h3 {
     font-weight: bold;
 }
 
-.jumbotron {
+body {
     background-image: url(https://www.dazzlejunction.com/backgrounds/NBA/phoenix-suns.gif); 
     background-repeat:repeat; 
     background-attachment: fixed;
     height: 100%;
-}
-
-.footer {
-    text-align: center;
-    font-family: 'Shadows Into Light', 'Amatic SC', "Times New Roman";
 }

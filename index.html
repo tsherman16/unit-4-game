@@ -15,50 +15,43 @@
 
 <body>
 
+    <div class="container background1 rounded-lg">
+        <h1 class="display-4 titleHeading">Suns Point Collector</h1>
+        <hr>
+        <p class="lead">You are given a random "Target Score" at the start of the game. Your starting five
+            are shown below.</p>
+        <p class="lead">
+            By clicking on a Suns player you will add a specific amount of points to your "Current Score". You win
+            the
+            game by matching your "Current Score" to the random "Target Score" shown. You lose the game if the
+            "Current Score"
+            goes above that random "Target Score".
+        </p>
+        <p class="lead">The value of each player is hidden from you until you click on it.
+            Each time the game starts, the value of each of the players change.</p>
+    </div>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container background1 rounded">
-            <h1 class="display-4 titleHeading">Suns Point Collector</h1>
+    <div class="container background2 rounded-lg">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Target Score: <span id="target-score"></span></h3>
+                <h3>Current Score: <span id="current-score"></span></h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Wins: <span id="wins"></span></h3>
+                <h3>Losses: <span id="losses"></span></h3>
+            </div>
+        </div>
+        <div class="row">
             <hr>
-            <p class="lead">You are given a random "Target Score" at the start of the game. Your starting five
-                are shown below.</p>
-            <p class="lead">
-                By clicking on a Suns player you will add a specific amount of points to your "Current Score". You win
-                the
-                game by matching your "Current Score" to the random "Target Score" shown. You lose the game if the
-                "Current Score"
-                goes above that random "Target Score".
-            </p>
-            <p class="lead">The value of each player is hidden from you until you click on it.
-                Each time the game starts, the value of each of the players change.</p>
         </div>
+        <div class="row">
+            <div class="col">
+                <div id="buttons"></div>
+            </div>
+        </div>
+    </div>
 
-        <div class="container background2 rounded">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Target Score: <span id="target-score"></span></h3>
-                    <h3>Current Score: <span id="current-score"></span></h3>
-                </div>
-                <div class="col-md-6">
-                    <h3>Wins: <span id="wins"></span></h3>
-                    <h3>Losses: <span id="losses"></span></h3>
-                </div>
-            </div>
-            <div class="row">
-                <hr>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div id="buttons"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container footer">
-            <p>by: Tim Sherman</p>
-        </div>
-    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"

@@ -46,11 +46,13 @@ $(document).ready(function () {
             winScore++;
             userScore = 0;
             $("#wins").text(winScore);
+            alert("Congrats, got the Win! Can you repeat?");
             startGame();
         } else if (userScore > compScore) {
             lossScore++;
             userScore = 0;
             $("#losses").text(lossScore);
+            alert("#loser #tryharder");
             startGame();
         }
     })
