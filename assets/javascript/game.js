@@ -1,15 +1,3 @@
-// START GAME
-// var = wins, losses, userScore, compScore, jewelScore, jewelPhotos
-
-//generate random number for the compScore*********
-//generate random number for the bballImages***********
-//add score to user score with every click
-//add win if score matches and add loss if score goes over
-//if score goes over restart game
-
-//The random number shown at the start of the game should be between 19 - 120
-//Each crystal should have a random hidden value between 1 - 12
-
 $(document).ready(function () {
 
     var winScore = 0;
@@ -30,25 +18,28 @@ $(document).ready(function () {
 
     startGame();
 
-    bballImages.forEach(function (src) {
-        let bballbtn = $("<button>");
-        bballbtn.addClass("bball-button");
-        bballbtn.attr("score", Math.floor(Math.random() * (maxNumberImg - minNumberImg + 1) + minNumberImg));
-        let img = $("<img>");
-        img.attr("src", src);
-        img.addClass("bball-buttonImg");
-        bballbtn.append(img);
-        $("#buttons").append(bballbtn);
-    });
+    function resetBBallImages() {
+        bballImages.forEach(function (src) {
+            let bballbtn = $("<button>");
+            bballbtn.addClass("bball-button");
+            bballbtn.attr("score", Math.floor(Math.random() * (maxNumberImg - minNumberImg + 1) + minNumberImg));
+            let img = $("<img>");
+            img.attr("src", src);
+            img.addClass("bball-buttonImg");
+            bballbtn.append(img);
+            $("#buttons").append(bballbtn);
+        });
+    }
 
     function startGame() {
-        console.log("I DID IT #1");
         compScore = Math.floor(Math.random() * (maxNumberComp - minNumberComp + 1) + minNumberComp);
         $("#target-score").text(compScore);
         $("#current-score").text(userScore);
+        $('#buttons').empty();
+        resetBBallImages();
     }
 
-    $(".bball-button").on("click", function () {
+    $(document).on("click", ".bball-button", function () {
         userScore = userScore + parseInt($(this).attr("score"));
         $("#current-score").text(userScore);
         if (userScore === compScore) {
@@ -63,7 +54,5 @@ $(document).ready(function () {
             startGame();
         }
     })
-
-
 
 });

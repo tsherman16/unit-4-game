@@ -9,15 +9,16 @@
 }
 
 .background1 {
-    background-color:black;
-    color: white;
+    background-color:#1D1160;
+    color: #E56020;
     padding: 20px;
 }
 
 .background2 {
-    background-color:black;
-    color: white;
+    background-color:#1D1160;
+    color: #E56020;
     padding: 20px;
+    margin-top: 20px;
 }
 
 h3 {
